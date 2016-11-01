@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TechTest</string>
+    <string name="no_products">No Products</string>
+    <string name="products">Products</string>
+    <string name="stars">%s Stars</string>
+    <string name="category">Category</string>
+    <string name="requires">Requires</string>
+    <string name="show_more_info">Show More Info</string>
+    <string name="show_less_info">Show Less Info</string>
+</resources>
