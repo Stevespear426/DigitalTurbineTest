@@ -41,8 +41,12 @@ public class ProductListFragment extends TestFragment implements LoaderManager.L
         mSpinner = (ProgressBar) main.findViewById(R.id.progress);
         mSwipeRefresh = (SwipeRefreshLayout) main.findViewById(R.id.swipe_layout);
         mSwipeRefresh.setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW);
-        mSwipeRefresh.setOnRefreshListener(() -> {
-            getLoaderManager().restartLoader(LOADER_ID, null, this);
+        mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                getLoaderManager().restartLoader(LOADER_ID, null, ProductListFragment.this);
+            }
         });
         RecyclerView recyclerView = (RecyclerView) main.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
